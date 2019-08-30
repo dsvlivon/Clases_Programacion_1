@@ -7,53 +7,61 @@
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "th.h"
 
-int pedirCantidad();
-int calcularMaximosYminimos(int cantidad, int min, int max);
+
+int CalculateMaxAndMin(int *auxMin, int *auxMax);
+
+#define MSG_ERR "Error"
 
 int main(void)
 {
-	int aux_cantidad;
-	int iteracion;
-	int *minimo;
-	int *maximo;
+	int iteration;
+	int minus;
+	int maximus;
 
-	aux_cantidad = pedirCantidad();
-	iteracion = calcularMaximosYminimos(aux_cantidad, *minimo, *maximo);
+	iteration = CalculateMaxAndMin(&minus, &maximus);
 
-	printf("el numero maximo es: %d",*maximo);
-	printf("el numero minimo es: %d",*minimo);
-}
-
-int pedirCantidad()
-{
-	int numero;
-	printf("cantidad de repeticiones?");
-	scanf("%d",&numero);
-	return numero;
-}
-
-int calcularMaximosYminimos(int cantidad, int min, int max)
-{
-	int numero;
-
-	for(i=0;i<cantidad;i++)
+	if (iteration == 0)
 	{
-		printf("Ingrese un numero: ");
-		scanf("%d",&numero);
-
-		if(i==0||numero>max)
-		{
-			max=numero;
-		}
-		if(i==0||numero<min)
-		{
-			min=numero;
-		}
+		printf("El número máximo es: %d\n: ", maximus);
+		printf("El número mínimo es: %d\n: ", minus);
 	}
-	*maximo=min;
-	*minimo=max;
+	else
+	{
+		printf(MSG_ERR);
+	}
+}
+
+int CalculateMaxAndMin(int *auxMin, int *auxMax)
+{
+	int number;
+	int i=0;
+	int max=*auxMax;
+	int min=*auxMin;
+	int rta;
+	int auxFail=-1;
+
+do
+	{
+		th_getNumber(int &number,99,1, 3);
+
+		if(i==0 || number<min)
+		{
+			min=number;
+		}
+		*auxMin=min;
+		if(i==0 || number<max)
+		{
+			max=number;
+		}
+		*auxMax=max;
+
+		printf("Desea continuar? s/n");
+		scanf("%d",&rta);
+	} while (rta!='n');
+
+	return auxFail;
 }

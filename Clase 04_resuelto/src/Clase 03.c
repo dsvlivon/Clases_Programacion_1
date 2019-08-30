@@ -48,13 +48,11 @@ int main(void)
 
 }
 
-int calculoMaxYMin(int* pFlag,int numeroFun,
-				   int* pMax,int* pMin)
+int calculoMaxYMin(int* pFlag, int numeroFun, int* pMax,int* pMin)
 {
 	int max = *pMax;
 	int min = *pMin;
 	int flag = *pFlag;
-
 
 	//pregunto si es la primera vez que entro
 	if(flag==0)

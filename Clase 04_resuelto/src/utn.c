@@ -14,8 +14,7 @@ static int calcularPromedio(int a, int b)
 }
 
 
-int utn_getNumero(int* pNumero,int rangoMax,int rangoMin,
-		  int reintentos,char* pMsg,char* pMsgErr)
+int utn_getNumero(int* pNumero,int rangoMax,int rangoMin, int reintentos,char* pMsg,char* pMsgErr)
 {
 	int numero,i;
 	int ret=-1; // cargo con error por default
