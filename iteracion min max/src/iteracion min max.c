@@ -21,7 +21,7 @@ int main(void)
 	int *minimo;
 	int *maximo;
 
-	cantidad = pedirCantidad();
+	aux_cantidad = pedirCantidad();
 	iteracion = calcularMaximosYminimos(aux_cantidad, *minimo, *maximo);
 
 	printf("el numero maximo es: %d",*maximo);
@@ -54,6 +54,6 @@ int calcularMaximosYminimos(int cantidad, int min, int max)
 			min=numero;
 		}
 	}
-	min=*maximo;
-	max=*minimo;
+	*maximo=min;
+	*minimo=max;
 }
