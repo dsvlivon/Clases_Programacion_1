@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #include <stdlib.h>
 
-int getInt(	int *pResultado,
-			char *pMensaje,
-			char *pMensajeError,
-			int minimo,
-			int maximo,
-			int reintentos)
+int getInt(	int *pResultado, char *pMensaje, char *pMensajeError, int minimo, int maximo, int reintentos)
 {
 	int retorno = -1;
 	int buffer;

@@ -14,7 +14,7 @@
 #include "profile.h"
 
 
-int getInt(int *pResulto, char *pMsg, char *pMsgFail, int min, int max, int try)
+int getInt(int *pResult, char *pMsg, char *pMsgFail, int min, int max, int try)
 {
 	int auxReturn = EXIT_FAIL -1;
 	int buffer;
