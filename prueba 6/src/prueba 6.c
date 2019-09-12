@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Prueba.c
+ Name        : prueba.c
  Author      : Daniel
  Version     :
  Copyright   : TH
@@ -9,11 +9,8 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "validations.h"
-#include "arrayFunctions.h"
-#include "profile.h"
-
-
+#include "UTN_Array.h"
+#include "UTN_Inputs.h"
 
 #define CANT_EL 4
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * validations.c
  *
  *  Created on: 11 sep. 2019
@@ -14,26 +14,23 @@
 #include "profile.h"
 
 
-int getInt(int *result, char *msg, char *msgFail, int minus, int maximus, int try)
+int getInt(int *pResulto, char *pMsg, char *pMsgFail, int min, int max, int try)
 {
-	int auxReturn = EXIT_FAIL;
+	int auxReturn = EXIT_FAIL -1;
 	int buffer;
-	if (result != NULL && msg != NULL && msgFail != NULL && minus < maximus && try >= 0)
+	do
 	{
-		do
+		printf("%s",pMsg);
+		fflush(stdin);
+		if(scanf("%d",&buffer)==1 && buffer >= min && buffer <= max)
 		{
-			printf("%s", msg);
-			fflush(stdin); //__fpurge(stdin); //en windows funciona __fflush para limpiar
-			if (scanf("%d", &buffer) == 1 && buffer >= minus && buffer <= maximus)
-			{
-				auxReturn = EXIT_SUCCESS;
-				*result = buffer; //caso de exito
-				break; //de aca salgo del while y evito poner el else
-			}
-			printf("%s", msgFail);
-			try--;
-		} while (try >= 0);
-	}
+			*pResult = buffer;
+			auxReturn = 0;
+			break;
+		}
+		printf("%s",pMsgFail);
+		try--;
+	}while(try >= 0);
 	return auxReturn;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
