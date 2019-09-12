@@ -1,0 +1,19 @@
+-Siempre que paso una direccion de memoria de un array TENGO que pasar un limite para que no desborde. SIEMPRE!
+-Cuando se piensa en ordenar datos encolumnados en arrays paralelos, para ordenarlos tengo que pensar en ordenar todos los datos del set.
+-Al pasar a una funcion un parametro con & le estoy dando permiso que lo escriba desde la funcion que lo va a procesar, en su lugar de origen.
+-Para CASTEAR se pone (float) delante de una de las variables que estoy procesando.
+Ej:aPromedio[i] = (((float)[i]aNota1[i]+aNota2[i])/2);
+-Parametros formales: cuando creo un argumento para usarlo directo
+-Parametros reales: cuando llamo a una funcion pasando un argumento
+-nombre de array solo= direccion de memoria el array posicion 0
+-nombre de array [3] hace referencia al contenido en la posicion 3
+
+----------------------------
+-char: es un caracter
+-string: es un array de caracteres
+-por ejemplo "carlos" es un string de 6 posiciones. 
+-se lo considera una matriz, de dos [] largo y alto. [4],[50]
+-string.h para usar strcpy, strlen, etc.
+-para pasar de un getstring a una matriz. uso un for q recorra las posiciones con strcpy
+-Si en un parametro formal determino el alto. QUE LO TENGO Q HACER, antes le pongo [][50], no puedo pasar solo [50]
+-
