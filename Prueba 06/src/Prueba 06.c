@@ -1,17 +1,19 @@
 /*
  ============================================================================
- Name        : clase.c
- Author      : daniel vizgarra
+ Name        : Prueba.c
+ Author      : Daniel
  Version     :
- Copyright   : th
+ Copyright   : TH
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "arrayFunctions.h"
 #include "validations.h"
+#include "arrayFunctions.h"
+#include "profile.h"
+
+
 
 #define CANT_EL 4
 
@@ -51,12 +53,11 @@ int cargarSetDatos(int* aLegajo, char* aSexo,int* aEdad,int* aNota1P,int* aNota2
         //scanf("%d", &aLegajo[i]);
         if(getInt(&buffer, "+Ingrese el legajo del alumno: ", "Error. ", 1, 100, 2) == 0)
         {
-        	aLegajo[i]=buffer;
-        }
-        else
-        {
-            aLegajo[i]=0;
-        }
+                aLegajo[i]=buffer;
+        }else
+            {
+                aLegajo[i]=0;
+            }
         printf("Ingrese el sexo del alumno: ");
         fflush(stdin);
         scanf("%c",&aSexo[i]);
@@ -67,10 +68,9 @@ int cargarSetDatos(int* aLegajo, char* aSexo,int* aEdad,int* aNota1P,int* aNota2
         printf("Ingrese la nota 2do Parcial del alumno: ");
         scanf("%d", &aNota2P[i]);
         aPromedio[i] = (((float)aNota1P[i]+aNota2P[i])/2);
-    }
+       }
     return 0;
 }
-
 int mostrarEstudiante(int aLegajo, char aSexo, int aEdad, int aNota1P,int aNota2P, float aPromedio)
 {
     printf("\n%d        %c     %d       %d         %d           %.2f", aLegajo, aSexo, aEdad, aNota1P, aNota2P, aPromedio);
